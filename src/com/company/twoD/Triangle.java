@@ -4,7 +4,7 @@ public class Triangle {
     private Point A,
             B,
             C;
-    private Line AB,
+    protected Line AB,
             AC,
             BC;
 
@@ -12,9 +12,7 @@ public class Triangle {
         A = first;
         B = second;
         C = third;
-        AB = new Line(A , B);
-        AC = new Line(A , C);
-        BC = new Line(B , C);
+        makeSides();
     }
 
     public Point getA() {
@@ -23,6 +21,7 @@ public class Triangle {
 
     public void setA(Point a) {
         A = a;
+        makeSides();
     }
 
     public Point getB() {
@@ -31,6 +30,7 @@ public class Triangle {
 
     public void setB(Point b) {
         B = b;
+        makeSides();
     }
 
     public Point getC() {
@@ -39,31 +39,29 @@ public class Triangle {
 
     public void setC(Point c) {
         C = c;
+        makeSides();
     }
 
+    private void makeSides(){
+        AB = new Line(A , B);
+        AC = new Line(A , C);
+        BC = new Line(B , C);
+    }
+    protected void makeSides(Point point){
+
+    }
     public Line getAB() {
         return AB;
-    }
-
-    public void setAB(Line AB) {
-        this.AB = AB;
     }
 
     public Line getAC() {
         return AC;
     }
 
-    public void setAC(Line AC) {
-        this.AC = AC;
-    }
-
     public Line getBC() {
         return BC;
     }
 
-    public void setBC(Line BC) {
-        this.BC = BC;
-    }
 
     public  double perimetr(){
         return AB.length() + BC.length() + AC.length();
