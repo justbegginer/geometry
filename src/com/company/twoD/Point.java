@@ -1,8 +1,8 @@
 package com.company.twoD;
 
 public class Point {
-    private double x;
-    private double y;
+    protected double x;
+    protected double y;
 
     public Point(double x, double y) {
         this.x = x;
@@ -27,9 +27,9 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point(" +
+        return "Point " +
                 "x=" + x +
-                "y=" + y + ")";
+                "y=" + y ;
     }
 
 }

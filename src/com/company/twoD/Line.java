@@ -1,8 +1,8 @@
 package com.company.twoD;
 
 public class Line {
-    private Point begin;
-    private Point end;
+    protected Point begin;
+    protected Point end;
 
     public Line(Point first, Point second) {
         begin = first;
