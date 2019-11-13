@@ -33,5 +33,6 @@ public class Main {
         System.out.println(anotherRectangle.getB());
         System.out.println(anotherRectangle.getC());
         System.out.println(anotherRectangle.getD());
+
     }
 }

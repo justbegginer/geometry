@@ -1,8 +1,13 @@
 package com.company.twoD;
 
 public class Point {
-    protected double x;
-    protected double y;
+    private double x;
+    private double y;
+
+    public Point(Point point){
+        y = point.getY();
+        x = point.getX();
+    }
 
     public Point(double x, double y) {
         this.x = x;
