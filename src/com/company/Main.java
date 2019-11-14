@@ -33,6 +33,14 @@ public class Main {
         System.out.println(anotherRectangle.getB());
         System.out.println(anotherRectangle.getC());
         System.out.println(anotherRectangle.getD());
-
+        Point beginOfVector = new Point(3 , 4);
+        Point endOfVector = new Point(0 , 0);
+        Point beginOfAnother = new Point (-4 , 3);
+        Point endOfAnother = new Point(0 , 0);
+        Vector first = new Vector(endOfVector , beginOfVector);
+        System.out.println("first " + first.getX() + " " + first.getY());
+        Vector second = new Vector(endOfAnother , beginOfAnother);
+        System.out.println("second " + second.getX() + " " + second.getY());
+        System.out.println(Vector.findAngle(first, second));
     }
 }
