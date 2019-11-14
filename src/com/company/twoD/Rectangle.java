@@ -13,6 +13,13 @@ public class Rectangle extends Triangle {
         makeSides();
     }
 
+    public Rectangle(Triangle triangle ,Point fourth){
+        super(triangle.getA(),triangle.getB(),triangle.getC());
+        D = fourth;
+        makeRightPointsCoordinates();
+        makeSides();
+    }
+
     public Point getD() {
         return D;
     }
@@ -20,6 +27,30 @@ public class Rectangle extends Triangle {
     public void setD(Point d) {
         D = d;
         makeSides();
+    }
+
+    public Line getAD() {
+        return AD;
+    }
+
+    public void setAD(Line AD) {
+        this.AD = AD;
+    }
+
+    public Line getBD() {
+        return BD;
+    }
+
+    public void setBD(Line BD) {
+        this.BD = BD;
+    }
+
+    public Line getCD() {
+        return CD;
+    }
+
+    public void setCD(Line CD) {
+        this.CD = CD;
     }
 
     private void makeRightPointsCoordinates() {
@@ -52,6 +83,11 @@ public class Rectangle extends Triangle {
         BC = new Line(getB(), getC());
         BD = new Line(getB(), getD());
         CD = new Line(getC(), getD());
+    }
+
+    public static boolean equal(Rectangle first , Rectangle second){
+        return Point.equal(first.getA() , second.getA()) && Point.equal(first.getB() , second.getB()) &&
+                Point.equal(first.getC() ,second.getC()) && Point.equal(first.getD() , second.getD());// TODO does it work right?
     }
 
     @Override

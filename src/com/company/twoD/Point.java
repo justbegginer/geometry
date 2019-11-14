@@ -4,7 +4,7 @@ public class Point {
     private double x;
     private double y;
 
-    public Point(Point point){
+    public Point(Point point) {
         y = point.getY();
         x = point.getX();
     }
@@ -30,11 +30,15 @@ public class Point {
         this.y = y;
     }
 
+    public static boolean equal(Point first, Point second) {
+        return first.getX() == second.getX() && first.getY() == second.getY();
+    }
+
     @Override
     public String toString() {
         return "Point " +
                 "x=" + x +
-                "y=" + y ;
+                "y=" + y;
     }
 
 }

@@ -1,7 +1,7 @@
 package com.company.twoD;
 
 public class Triangle {
-    private Point A,
+    protected Point A,
             B,
             C;
     protected Line AB,
@@ -11,6 +11,13 @@ public class Triangle {
     public Triangle(Point first, Point second, Point third) {
         A = first;
         B = second;
+        C = third;
+        makeSides();
+    }
+
+    public Triangle(Line line, Point third) {
+        A = line.getBegin();
+        B = line.getEnd();
         C = third;
         makeSides();
     }
@@ -42,14 +49,12 @@ public class Triangle {
         makeSides();
     }
 
-    private void makeSides(){
-        AB = new Line(A , B);
-        AC = new Line(A , C);
-        BC = new Line(B , C);
+    private void makeSides() {
+        AB = new Line(A, B);
+        AC = new Line(A, C);
+        BC = new Line(B, C);
     }
-    protected void makeSides(Point point){
 
-    }
     public Line getAB() {
         return AB;
     }
@@ -62,12 +67,19 @@ public class Triangle {
         return BC;
     }
 
+    public static boolean equal(Triangle first, Triangle second) {
+        return Point.equal(first.getA(), second.getA()) && Point.equal(first.getB(), second.getB()) && Point.equal(first.getC(), second.getC());//TODO does it work right?
+    }
 
-    public  double perimetr(){
+    public String info(){
+        return "";
+    }
+
+    public double perimetr() {
         return AB.length() + BC.length() + AC.length();
     }
 
-    public double area(){
+    public double area() {
         double halfPerimetr = perimetr() / 2;
         return Math.sqrt(halfPerimetr * (halfPerimetr - AB.length()) * (halfPerimetr - AC.length()) * (halfPerimetr - BC.length()));
     }

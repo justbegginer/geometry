@@ -29,6 +29,10 @@ public class Line {
         return Math.sqrt(Math.pow(end.getX() - begin.getX() , 2) + Math.pow(end.getY() - begin.getY() , 2));
     }
 
+    public static boolean equl(Line first , Line second){
+        return Point.equal(first.getBegin() , second.getBegin()) && Point.equal(first.getEnd() , second.getEnd());
+    }
+
     public static double findAngle(Line firstLine , Line secondLine){
         Vector firstVector = new Vector(firstLine) , secondVector = new Vector(secondLine);
         return Vector.findAngle(secondVector , firstVector);
